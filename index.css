@@ -6,8 +6,9 @@
 	box-sizing: border-box;
 }
 body{
-	background: linear-gradient(to left, white, black);
-	background-repeat: no-repeat;
+	/*background: linear-gradient(to left, white, black);
+	background-repeat: no-repeat;*/
+	background: rgba(232, 222, 222, 1);
 }
 
 /*------------------------------------------------------------*/
@@ -15,7 +16,8 @@ h1{
 	text-align: center;
 	display: block;
 	font-size: 70px;
-	font-family: 'Poor Story', system-ui;
+	font-weight: 700;
+	font-family: 'Raleway', sans-serif;
 	margin-top: 50px;
 	margin-bottom: 20px;
 }
@@ -25,14 +27,16 @@ h1{
 
 nav{
 	position: sticky;
-	padding: 15px 15px;
+	padding: 5px 5px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	background: #fff;
+	margin-bottom: 50px;
 }
 .navi > a{
 	text-decoration: none;
-	color: #fff;
+	color: #000;
 	font-size: 50px;
 	font-family: 'Poor Story', system-ui;
 	padding-left: 20px;
@@ -40,11 +44,14 @@ nav{
 
 .list ol{
 	display: flex;
+	margin-bottom: 0;
+	align-items: center;
 }
 
 ol li{
 	list-style: none;
-	margin: 10px 10px;
+	padding-right: 20px;
+	padding-left: 10px;
 }
 
 ol a{
@@ -54,22 +61,10 @@ ol a{
 	font-family: ;
 }
 
-/*.list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: none;
+li:hover {
+	background-color: #ccc;
+	border-radius: 10px;
 }
-
-.list li {
-    display: block;
-}
-
-.list-toggle {
-    cursor: pointer;
-    text-decoration: underline;
-    color: blue;
-}*/
 /*------------------------------------------------------------*/
 
 /* Header */
@@ -89,7 +84,7 @@ header{
 }
 
 .typo p{
-	color: white;
+	color: #000;
 	font-size: 50px;
 	text-align: right;
 	font-family: 'Raleway', sans-serif;
@@ -105,7 +100,7 @@ header{
 
 /* About  */
 
-#about {
+#about2 {
 /*	max-width: 500px;*/
 	display: flex;
 	justify-content: center;
@@ -114,7 +109,7 @@ header{
 
 }
 
-#about p{
+#about2 p{
 	text-align: center;
 	max-width: 1300px;
 	width: 100%;
@@ -122,14 +117,14 @@ header{
 	font-size: 35px;
 	font-weight: 20px;
 	font-family: 'Raleway', sans-serif;
-	color: #fff;
+	color: #000;
 }
 
 /*------------------------------------------------------------*/
 
 /* Projects */
 
-#projects{
+#projects1{
 	display: flex;
 	justify-content: space-evenly;
 	text-align: center;
@@ -147,12 +142,17 @@ header{
 	max-width: 25vw;
 	width: 100%;
 	height: auto;
+	border-radius: 49px;
+	background: linear-gradient(45deg, #ece9e9, #c7c4c4);
+	box-shadow: 17px -17px 25px #a4a1a1,
+             -17px 17px 25px #ffffff;
+    padding: 10px;
 }
 
 .cur-proj p{
 	padding-top: 20px;
 	font-size: 2rem;
-	color: #fff;
+	color: #000;
 }
 
 /*------------------------------------------------------------*/
@@ -162,7 +162,8 @@ header{
 /* Tools */
 
 .tool p{
-	color: #fff;
+	font-size: 2rem;
+	color: #000;
 	text-align: center;
 }
 
@@ -182,11 +183,17 @@ header{
 }
 
 .tool-pic img {
-	border-radius: 42px;
-/*	background: linear-gradient(45deg, #f0f0f0, #cacaca);*/
-	box-shadow:  21px -21px 42px #b3b3b3,
-             -21px 21px 42px #ffffff;
-/*    border: 1px solid #cacaca;*/
+	border-radius: 49px;
+	background: linear-gradient(45deg, #ece9e9, #c7c4c4);
+	box-shadow:  20px 20px 21px #c5bdbd,
+             -20px -20px 21px #ffffff;
+    filter: blur(2px);
+  	transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.tool-pic img:hover {
+	filter: blur(0);
+  	transform: scale(1.1);
 }
 
 /*------------------------------------------------------------*/
@@ -195,6 +202,26 @@ header{
 
 /* Contact Me */
 
+#contact1 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+}
+
+#contact1 a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	color: #000;
+	font-size: 40px;
+	transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+#contact1 a:hover {
+  	transform: scale(1.5);
+}
 
 /*------------------------------------------------------------*/
 
@@ -204,7 +231,7 @@ header{
 
 footer {
 	display: flex;
-	background: #ccc;
+/*	background: #f0f0f0;*/
 	justify-content: center;
 	align-items: center;
 	gap: 20px;
@@ -212,7 +239,10 @@ footer {
 }
 
 
-
+h4 {
+	position: inherit;
+	text-align: right;
+}
 
 
 /*------------------------------------------------------------*/
@@ -230,7 +260,7 @@ footer {
 		margin-top: 10px;
 		padding: 10px;
 	}
-	#projects {
+	#projects1 {
 /*		flex-wrap: wrap;*/
 		flex-direction: column;
 	}
@@ -243,7 +273,7 @@ footer {
 	.typo p {
 		font-size: 30px;
 	}
-	#about p {
+	#about2 p {
 		font-size: 25px;
 	}
 	.list ol {
