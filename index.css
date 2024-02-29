@@ -134,19 +134,23 @@ header{
 
 .cur-proj{
 	margin-top: 10px;
-}
-
-.cur-proj a > img{
-	border: 3px solid #ccc;
 	border-radius: 20px;
-	max-width: 25vw;
-	width: 100%;
-	height: auto;
-	border-radius: 49px;
 	background: linear-gradient(45deg, #ece9e9, #c7c4c4);
 	box-shadow: 17px -17px 25px #a4a1a1,
              -17px 17px 25px #ffffff;
-    padding: 10px;
+    padding: 20px;
+    max-width: 26vw;
+	width: 100%;
+	height: auto;
+	display: inline-block;
+	align-items: center;
+}
+
+.cur-proj a > img{
+	border-radius: 20px;
+	width: 100%;
+	height: auto;
+	border-radius: 49px;
 }
 
 .cur-proj p{
@@ -180,6 +184,7 @@ header{
 	gap: 50px;
 	padding: 20px;
 	margin: 30px auto;
+/*	flex-wrap: wrap;*/
 }
 
 .tool-pic img {
@@ -243,6 +248,10 @@ h4 {
 	position: inherit;
 	text-align: right;
 }
+h4 a {
+	text-decoration: none;
+	color: #000;
+}
 
 
 /*------------------------------------------------------------*/
@@ -261,8 +270,10 @@ h4 {
 		padding: 10px;
 	}
 	#projects1 {
-/*		flex-wrap: wrap;*/
-		flex-direction: column;
+		flex-wrap: wrap;
+	}
+	.tool-pic {
+		flex-wrap: wrap;
 	}
 }
 
@@ -281,6 +292,9 @@ h4 {
 	}
 	.tool-pic {
 		flex-wrap: wrap;
+	}
+	#projects1 {
+		flex-direction: column;
 	}
 }
 
