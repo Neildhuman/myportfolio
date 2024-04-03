@@ -18,10 +18,15 @@ h1{
 	font-size: 70px;
 	font-weight: 700;
 	font-family: 'Raleway', sans-serif;
-	margin-top: 50px;
+	margin-top: 40px;
 	margin-bottom: 20px;
 }
 /*------------------------------------------------------------*/
+
+a:hover {
+      color: #000; /* Set the color you want for hover state */
+    }
+
 
 /*Navigation*/
 
@@ -42,6 +47,10 @@ nav{
 	padding-left: 20px;
 }
 
+.list-toggle {
+    display: none; /* Initially hide the hamburger icon */
+}
+
 .list ol{
 	display: flex;
 	margin-bottom: 0;
@@ -50,20 +59,20 @@ nav{
 
 ol li{
 	list-style: none;
-	padding-right: 20px;
-	padding-left: 10px;
+	padding: 10px;
 }
 
 ol a{
 	text-decoration: none;
 	color: black;
 	font-size: 25px;
-	font-family: ;
+	/* font-family: ; */
 }
 
 li:hover {
 	background-color: #ccc;
 	border-radius: 10px;
+	padding: 0 10px 3px 10px;
 }
 /*------------------------------------------------------------*/
 
@@ -83,9 +92,20 @@ header{
 	padding: 0 auto;
 }
 
+.typewriter {
+	overflow: hidden; /* Ensures the content is not revealed until the animation */
+	border-right: .15em solid orange; /* The typwriter cursor */
+	white-space: nowrap; /* Keeps the content on a single line */
+	margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+	letter-spacing: .05em; /* Adjust as needed */
+	animation: 
+	  typing 3.5s steps(40, end),
+	  blink-caret .75s step-end infinite;
+}
+
 .typo p{
 	color: #000;
-	font-size: 50px;
+	font-size: 30px;
 	text-align: right;
 	font-family: 'Raleway', sans-serif;
 }
@@ -105,19 +125,23 @@ header{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
+	text-align: center;
 	margin-bottom: 30px;
-
+	background: #413939;
+	height: auto;
+	padding: 30px;
+	color: #fff;
 }
 
 #about2 p{
 	text-align: center;
-	max-width: 1300px;
+	max-width: 1000px;
 	width: 100%;
 	padding: 2rem 3rem;
-	font-size: 35px;
+	font-size: 2.5rem;
 	font-weight: 20px;
 	font-family: 'Raleway', sans-serif;
-	color: #000;
 }
 
 /*------------------------------------------------------------*/
@@ -129,7 +153,9 @@ header{
 	justify-content: space-evenly;
 	text-align: center;
 	margin-top: 30px;
+	margin-bottom: 50px;
 	align-items: center;
+	padding: 30px;
 }
 
 .cur-proj{
@@ -149,7 +175,7 @@ header{
 .cur-proj a > img{
 	border-radius: 20px;
 	width: 100%;
-	height: auto;
+	min-height: 100%;
 	border-radius: 49px;
 }
 
@@ -165,9 +191,35 @@ header{
 
 /* Tools */
 
-.tool p{
+#tools1 {
+	background: #413939;
+	padding: 30px;
+}
+
+:root {
+	--color-css: rgb(87, 87, 244);
+	--color-html: orange;
+	--color-js: yellow;
+	--color-bootstrap: rgb(187, 4, 187);
+	--color-express: #fff;
+	--color-mongo: lightgreen;
+	--color-node: #fff;
+	--color-postman: orange;
+	--color-git: red;
+	--color-gitlab: orange;
+	--color-react: skyblue;
+	--color-sublime: rgb(240, 198, 80);
+}
+
+.tool p { 
 	font-size: 2rem;
-	color: #000;
+	color: #fff;
+	text-align: center;
+}
+
+#tools1 h1 {
+	padding-bottom: 20px;
+	color: #fff;
 	text-align: center;
 }
 
@@ -184,20 +236,70 @@ header{
 	gap: 50px;
 	padding: 20px;
 	margin: 30px auto;
-/*	flex-wrap: wrap;*/
+	flex-wrap: wrap;
 }
 
 .tool-pic img {
-	border-radius: 49px;
+	/* border-radius: 49px;
 	background: linear-gradient(45deg, #ece9e9, #c7c4c4);
 	box-shadow:  20px 20px 21px #c5bdbd,
-             -20px -20px 21px #ffffff;
-    filter: blur(2px);
+             -20px -20px 21px #ffffff; */
+	
+    /* filter: blur(1.3px); */
   	transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
+.css {
+	--color: var(--color-css);
+}
+
+.html {
+	--color: var(--color-html);
+}
+
+.js {
+	--color: var(--color-js);	
+}
+
+.react {
+	--color: var(--color-react);	
+}
+
+.node {
+	--color: var(--color-node);	
+}
+
+.bootstrap {
+	--color: var(--color-bootstrap);	
+}
+
+.express {
+	--color: var(--color-express);	
+}
+
+.mongo {
+	--color: var(--color-mongo);	
+}
+
+.postman {
+	--color: var(--color-postman);	
+}
+
+.sublime {
+	--color: var(--color-sublime);	
+}
+
+.git {
+	--color: var(--color-git);	
+}
+
+.gitlab	 {
+	--color: var(--color-gitlab);	
+}
+
 .tool-pic img:hover {
-	filter: blur(0);
+	/* filter: blur(0); */
+	filter: drop-shadow(2px 2px 15px var(--color));
   	transform: scale(1.1);
 }
 
@@ -257,6 +359,20 @@ h4 a {
 
 /*------------------------------------------------------------*/
 
+/* Keyframes */
+
+@keyframes typing {
+	from { width: 0; height: 100% }
+	to { width: 100%; height: 100% }
+  }
+  
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+	from, to { border-color: transparent }
+	50% { border-color: orange; }
+}
+
+
 /* Media Queries  */
 
 @media (max-width: 768px){
@@ -295,5 +411,18 @@ h4 a {
 	#projects1 {
 		flex-direction: column;
 	}
+
+	.list-toggle {
+        display: block; /* Display the hamburger icon */
+        cursor: pointer;
+    }
+
+    .list ol {
+        display: none; /* Hide the list */
+    }
+
+    .list ol.active {
+        display: block; /* Show the list when active */
+    }
 }
 
