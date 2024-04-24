@@ -155,7 +155,7 @@ header{
 	margin-top: 30px;
 	margin-bottom: 50px;
 	align-items: center;
-	padding: 30px;
+	padding: 20px;
 }
 
 .cur-proj{
@@ -167,21 +167,23 @@ header{
     padding: 20px;
     max-width: 26vw;
 	width: 100%;
-	height: auto;
-	display: inline-block;
+	display: flex;
 	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	min-height: 100%;
 }
 
 .cur-proj a > img{
 	border-radius: 20px;
 	width: 100%;
-	min-height: 100%;
 	border-radius: 49px;
+	aspect-ratio: 4/3;
 }
 
 .cur-proj p{
-	padding-top: 20px;
-	font-size: 2rem;
+	padding: 20px;
+	font-size: auto;
 	color: #000;
 }
 
